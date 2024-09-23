@@ -1,9 +1,8 @@
 openapi: 3.0.2
 info:
-  title: Pestore API
+  title: Pestore-API
   version: 1.0.0
-  description: |-
-    API de teste
+  description:  API de teste
   contact:
     name: Harley Diniz
     url: 'http://www.bnb.gov.br'
@@ -32,6 +31,7 @@ paths:
     get:
       responses:
         "200":
+          description: "200"
           content:
             application/json:
               schema:
@@ -52,13 +52,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/NewPet'
+              $ref: '#/components/schemas/NewPet'
             examples:
               new_pet:
                 value:
                   name: Beth
       responses:
         "201":
+          description: "201"
           content:
             application/json:
               schema:
@@ -69,11 +70,12 @@ paths:
                     {
                       "id": {{ randomInt(5,10) }},
                       "name": "{{ request.body/name }}"
-                    }					  
+                    }            
   /pets/{id}:
     get:
       parameters:
         - name: id
+          required: true
           in: path
           schema:
             type: string
@@ -84,6 +86,7 @@ paths:
               value: '2'
       responses:
         "200":
+          description: "200"
           content:
             application/json:
               schema:
