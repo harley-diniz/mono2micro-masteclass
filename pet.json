@@ -49,6 +49,7 @@ paths:
                       name: Ceci
                     - id: 3
                       name: Pet Malucão
+  /pets:
     post:
       requestBody:
         content:
