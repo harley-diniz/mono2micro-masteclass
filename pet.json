@@ -2,7 +2,7 @@ openapi: 3.0.2
 info:
   title: Pestore-API
   version: 1.0.0
-  description:  API de teste
+  description: API de teste
   contact:
     name: Harley Diniz
     url: 'http://www.bnb.gov.br'
@@ -49,7 +49,6 @@ paths:
                       name: Ceci
                     - id: 3
                       name: Pet Malucão
-  /pets:
     post:
       requestBody:
         content:
@@ -69,11 +68,9 @@ paths:
                 $ref: '#/components/schemas/Pet'
               examples:
                 new_pet:
-                  value: |-
-                    {
-                      "id": {{ randomInt(5,10) }},
-                      "name": "{{ request.body/name }}"
-                    }            
+                  value:
+                    id: 5
+                    name: Beth
   /pets/{id}:
     get:
       parameters:
